@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block title %}store {% endblock title %}
+
+{% block body %}
+{% csrf_token %}
+<br>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-center"><u>Search</u></h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>SNo</th>
+                    <th>Scrapers</th>
+                    <th>URL</th>
+                    <th>Edit</th>
+                    <th>Schedule</th>
+                    <th>Delete</th>
+                    <th>Execute</th>
+                    <th>Date</th>
+                    <th>Download</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in obj %}
+                {% if user.id == i.user_id_id %}
+                   <tr>
+                    <td>{{ forloop.counter  }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.url }}</td>
+                    <td><a class="btn btn-sm btn-success" href="edit/{{i.id}}">Edit</a></td>
+                    <td><a class="btn btn-sm btn-success" href="schedule1/{{i.id}}">Sche</a></td>
+                    <td><a class="btn btn-sm btn-danger" href="delete/{{i.id}}">Del</a></td>
+                    <td><a class="btn btn-sm btn-info" href="apply/{{i.id}}">Exec</a></td>
+                    <td>{{i.date}}</td>                     
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,6 @@
+//*[contains(concat( " ", @class, " " ), concat( " ", "screener-link-primary", " " ))]/text() | //*[contains(concat( " ", @class, " " ), concat( " ", "screener-link", " " ))]/text() | //*[contains(concat( " ", @class, " " ), concat( " ", "is-green", " " ))]/text() |//*[contains(concat( " ", @class, " " ), concat( " ", "is-red", " " ))]/text()
+
+
+//*[contains(concat( " ", @class, " " ), concat( " ", "screener-link-primary", " " ))]/text() | //*[contains(concat( " ", @class, " " ), concat( " ", "screener-link", " " ))]/text() | //*[contains(concat( " ", @class, " " ), concat( " ", "is-green", " " ))]/text() |//*[contains(concat( " ", @class, " " ), concat( " ", "is-red", " " ))]/text()
+
+//[contains(concat( " ", @class, " " ), concat( " ", "screener-link", " " ))]/text() | //[contains(concat( " ", @class, " " ), concat( " ", "table-top", " " ))]/text() | //[contains(concat( " ", @class, " " ), concat( " ", "table-top-s", " " ))]/text() | //[contains(concat( " ", @class, " " ), concat( " ", "screener-link-primary", " " ))]/text() | //[contains(concat( " ", @class, " " ), concat( " ", "is-green", " " ))]/text() | //[contains(concat( " ", @class, " " ), concat( " ", "is-red", " " ))]/text()

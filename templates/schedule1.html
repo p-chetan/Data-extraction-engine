@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block title %}Profile {% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="row g-3">
+     {{sc.as_p}}
+    </div>
+    <center><button class="btn btn-primary" type="submit">Submit</button> </center>
+</div>
+</form>
+
+{% endblock body %}

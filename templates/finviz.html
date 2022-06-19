@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Finviz {% endblock title %}
+
+{% block body %}
+
+<center> <br>
+    <h3>Finviz Scraper</h3>
+</center>
+<div class="container" py-4>
+    <form method="post" action="newO">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Scraper Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input type="url" class="form-control" id="url" name="url">
+        </div>
+        <div class="mb-3">
+            <label for="DXpath" class="form-label">Table No</label>
+            <input type="text" class="form-control" id="DXpath" name="DXpath" required>
+        </div>
+        <div class="mb-3">
+            <label for="BXpath" class="form-label">Button Xpath</label>
+            <input t ype="text" class="form-control" id="BXpath" name="BXpath">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}InvestwithBuzz {% endblock title %}
+
+{% block body %}
+<center> <br>
+    <h3>Invest with Buzz Scraper</h3>
+</center>
+<div class="container">
+    <form action="buzz" method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            {{form.as_p}}
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Edit {% endblock title %}
+
+{% block body %}
+<br>
+
+<div class="container">
+    <form method="post">
+
+        {% csrf_token %}
+        <div class="mb-3">
+            {{edited.as_p}}
+        </div>
+        <button class="btn btn-primary" type="submit">Update</button>
+
+    </form>
+</div>
+
+{% endblock body %}

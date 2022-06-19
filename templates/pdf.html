@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% block title %}PDF {% endblock title %}
+
+{% block body %}
+<center><br><h3>PDF Scraper</h3> </center>
+<div class="container">
+    <form action="pdf1"  method="POST" >  
+    {% csrf_token %}
+
+    <div class="mb-3">
+        {{form.as_p}}
+    </div>
+    <button class="btn btn-primary" type="submit"  >Submit</button>
+    </form>
+</div>
+    
+{% endblock body %}

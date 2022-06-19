@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% block title %}Profile {% endblock title %}
+
+{% block body %}
+
+<div class="container my-5">
+    <div class="row">
+     <h3>Welcome {{request.user.username|capfirst}}</h3>
+     <div class="col-sm-2 border-end">
+      <ul class="list-unstyled">
+       <li class="d-grid"><a href="{% url 'profile' %}" class="btn btn-primary">Profile</a></li>
+      </ul>
+     </div>
+     </div>
+    </div>
+   </div>
+{% endblock body %}

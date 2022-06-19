@@ -1,0 +1,61 @@
+{% extends 'base.html' %} 
+{% block title %}store {% endblock title %}
+
+{% block body %}
+{% csrf_token %}
+<br>
+<style>
+table {
+    table-layout: unset !important;
+}
+td {
+    word-break: break-word;
+    min-width: 100px;
+}
+</style>
+<!--- <div style="overflow:auto"> --->
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+</div>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-center mx-2"><u>PDF Stored Scraper</u></h3><br>
+        <table class="table">
+            <thead class="thead" bgcolor="#e9ecef">
+                <tr>
+                    <th>SNo</th>
+                    <th>Scrapers</th>
+                    <th>URL</th>
+                    <th>Edit</th>
+                  <!--- <th>Schedule</th>--->
+                    <th>Delete</th>
+                    <th>Execute</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                {% if user.id == i.user_id_id %}
+                    <tr>
+                        <td>{{ forloop.counter  }}</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{i.url}}</td>
+                        <td><a class="btn btn-sm btn-success" href="editpdf/{{i.id}}">Edit</a></td>
+                       <!--- <td><a class="btn btn-sm btn-success" href="schedule1/{{i.id}}">Sche</a></td> --->
+                        <td><a class="btn btn-sm btn-danger" href="deletepdf/{{i.id}}">Del</a></td>
+                        <td><a class="btn btn-sm btn-info" href="applypdf/{{i.id}}">Exec</a></td>
+                        <td>{{i.date}}</td>
+                        
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</div>
+
+{% endblock body %}
